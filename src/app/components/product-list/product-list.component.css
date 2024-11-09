@@ -1,0 +1,18 @@
+.product-image{
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+}
+
+.product-card{
+    float: left;
+    width: 25%;
+    height: 20%;
+    background-color:#7e4a35;
+    color: #fff;
+    padding: 20px;
+    margin: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 5px solid orange;
+    border-radius: 8px;
+}

@@ -1,0 +1,11 @@
+<!-- src/app/components/product-list/product-list.component.html -->
+<div class="product-list">
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.images[0]" alt="{{ product.title }}" class="product-image" />
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+    </div>
+  </div>
+  
