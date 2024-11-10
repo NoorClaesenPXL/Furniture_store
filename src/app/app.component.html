@@ -1,11 +1,15 @@
-<h1>Furniture Store</h1>
+<body>
+  <h1>Furniture Store</h1>
 
-<div>
-  <label for="dropDown">Choose a diffrent style:</label>
-  <select id="dropDown" name="dropDown">
-      <option value="option1">Retro</option>
-      <option value="option2">Minimalist</option>
-      <option value="option3">Option 3</option>
-      <option value="option4">Option 4</option>
-  </select>
-</div>
+  <div>
+    <label for="styleDropdown">Choose a different style:</label>
+    <select id="styleDropdown" (change)="applyStyle($event)">
+      <option value="" disabled selected>Select Style</option>
+      <option *ngFor="let option of styleOptions" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>    
+  </div>
+
+  <app-product-list></app-product-list>
+</body>
