@@ -13,6 +13,13 @@
     padding: 20px;
     margin: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 5px solid orange;
+    border: 5px solid rgb(10, 85, 128);
     border-radius: 8px;
+}
+
+button{
+    margin: 10px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
 }

@@ -2,11 +2,13 @@ import { Component, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CommonModule } from '@angular/common';
+import { BasketComponent } from './components/basket/basket.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductListComponent, CommonModule],
+  imports: [RouterOutlet, ProductListComponent, 
+    CommonModule, BasketComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] // Fixed typo from `styleUrl` to `styleUrls`
 })

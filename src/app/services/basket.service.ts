@@ -12,15 +12,25 @@ export class BasketService {
 
   constructor() { }
 
-  getAllNotOrderedBaskets(): Observable<Basket[]>{
+  private getCurrentBasketFromStorage(): Basket | undefined {
+    const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    return baskets.find(basket => !basket.orderPlaced);
+  }
+
+  getAllNotOrderedBaskets(): Observable<Basket[]> {
     const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
     const notOrderedBaskets = baskets.filter(basket => !basket.orderPlaced);
     return of(notOrderedBaskets);
   }
 
+  getCurrentBasket(): Observable<Basket | undefined> {
+    const currentBasket = this.getCurrentBasketFromStorage();
+    return of(currentBasket);
+  }
+
   addProductToBasket(product: Product): void {
     const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-    let currentBasket = baskets.find(basket => !basket.orderPlaced);
+    let currentBasket = this.getCurrentBasketFromStorage();
 
     if (!currentBasket) {
       currentBasket = new Basket(Date.now(), 0, false);
@@ -33,30 +43,27 @@ export class BasketService {
     localStorage.setItem(this.storageKey, JSON.stringify(baskets));
   }
 
-  getProductsFromBasket(): Observable<Product[]>{
-    const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-    let currentBasket = baskets.find(basket => !basket.orderPlaced);
-
+  getProductsFromBasket(): Observable<Product[]> {
+    const currentBasket = this.getCurrentBasketFromStorage();
     const products = currentBasket ? currentBasket.products : [];
-
     return of(products);
   }
 
-  orderBasket() : void{
+  orderBasket(): void {
     const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-    let currentBasket = baskets.find(basket => !basket.orderPlaced);
+    let currentBasket = this.getCurrentBasketFromStorage();
 
-    if(currentBasket){
+    if (currentBasket) {
       currentBasket.orderPlaced = true;
       localStorage.setItem(this.storageKey, JSON.stringify(baskets));
     }
   }
 
-  deleteProductFromBasket(productId: number): void{
+  deleteProductFromBasket(productId: number): void {
     const baskets: Basket[] = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-    let currentBasket = baskets.find(basket => !basket.orderPlaced);
+    let currentBasket = this.getCurrentBasketFromStorage();
 
-    if(currentBasket){
+    if (currentBasket) {
       currentBasket.products = currentBasket.products.filter(product => product.id !== productId);
       currentBasket.total = currentBasket.products.reduce((sum, product) => sum + product.price, 0);
       localStorage.setItem(this.storageKey, JSON.stringify(baskets));
