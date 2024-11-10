@@ -11,5 +11,13 @@
     </select>    
   </div>
 
+  <div [style.background-color]="backgroundColor" style="height: 100vh;">
+    <label for="colorDropdown">Choose a background color:</label>
+    <select id="colorDropdown" (change)="changeBackgroundColor($event)">
+      <option value="" disabled selected>Select a color</option>
+      <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+    </select>
+  </div>
+
   <app-product-list></app-product-list>
 </body>

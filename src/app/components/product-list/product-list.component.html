@@ -5,7 +5,6 @@
       <h3>{{ product.title }}</h3>
       <p>{{ product.description }}</p>
       <p><strong>Price:</strong> ${{ product.price }}</p>
-      <button>Buy</button>
+      <button (click)="addToBasket(product)">Pay</button>
     </div>
   </div>
-  

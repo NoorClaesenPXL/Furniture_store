@@ -10,12 +10,11 @@ import { BasketComponent } from './components/basket/basket.component';
   imports: [RouterOutlet, ProductListComponent, 
     CommonModule, BasketComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Fixed typo from `styleUrl` to `styleUrls`
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'furniture_store';
 
-  // Define style options with class names
   styleOptions = [
     { label: 'Retro', value: 'retro-style' },
     { label: 'Minimalist', value: 'minimalist-style' }
@@ -23,19 +22,25 @@ export class AppComponent {
 
   constructor(private renderer: Renderer2) {}
 
-  // Method to apply the selected style
   applyStyle(event: Event) {
-    const selectElement = event.target as HTMLSelectElement | null; // Cast as HTMLSelectElement and handle null
+    const selectElement = event.target as HTMLSelectElement | null;
     const styleClass = selectElement?.value;
   
-    if (!styleClass) return; // Exit if styleClass is null or empty
+    if (!styleClass) return;
   
-    // Remove previously added style classes
     this.styleOptions.forEach(option => {
       this.renderer.removeClass(document.body, option.value);
     });
   
-    // Add the selected style class
     this.renderer.addClass(document.body, styleClass);
+  }
+
+  backgroundColor: string = 'white';
+
+  colors = ['white', 'lightblue', 'lightgreen', 'lightyellow', 'lightcoral'];
+
+  changeBackgroundColor(event: Event) {
+    const selectedColor = (event.target as HTMLSelectElement).value;
+    this.backgroundColor = selectedColor;
   }
 }

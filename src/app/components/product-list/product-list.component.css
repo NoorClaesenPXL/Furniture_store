@@ -23,3 +23,7 @@ button{
     border: none;
     border-radius: 5px;
 }
+
+button:hover{
+    background-color: rgb(10, 85, 128);
+}

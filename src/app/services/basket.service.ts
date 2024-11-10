@@ -38,7 +38,9 @@ export class BasketService {
     }
 
     currentBasket.products.push(product);
-    currentBasket.total += product.price;
+    currentBasket.total = currentBasket.products.reduce((sum, product) => sum + product.price, 0);
+
+    console.log('Updated basket:', currentBasket);
 
     localStorage.setItem(this.storageKey, JSON.stringify(baskets));
   }
