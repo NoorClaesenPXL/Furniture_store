@@ -19,20 +19,25 @@
   }
 }
 
-img{
+.logo{
+  background-image: url('../assets/logo-minimalist-furniture_23-2148462014.jpg'); /* Set your image path here */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 450px;
-  background-image: url(../assets/logo-minimalist-furniture_23-2148462014.jpg);
+  height: 450px;
 }
 
 @media (max-width: 1300px) {
   .split-container {
     flex-direction: column;
   }
-  img{
+  .logo{
     width: 200px;
+    height: 200px;
     float: left;
     margin-right: 20px;
-    }
+  }
 }
 
 .minimalist {
