@@ -21,6 +21,7 @@
 
 img{
   width: 450px;
+  background-image: url(../assets/logo-minimalist-furniture_23-2148462014.jpg);
 }
 
 @media (max-width: 1300px) {
