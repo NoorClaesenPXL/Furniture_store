@@ -1,6 +1,8 @@
 .product-image {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
+    margin-left: 20%;
+    margin-right: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,14 +10,26 @@
 
 .product-card{
     float: left;
-    width: 30%;
-    height: 500px;
+    width: 45%;
+    height: 450px;
     padding: 20px;
     margin: 5px;
     border: 5px solid rgb(10, 85, 128);
     border-radius: 8px;
     box-sizing: border-box;
 }
+
+@media (max-width: 1300px) {
+    .product-card{
+        width: 30%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .product-card{
+        width: 45%;
+    }
+  }
 
 button{
     color: black;

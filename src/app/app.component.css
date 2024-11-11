@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1300px) {
   .left-panel {
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ img{
   width: 450px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .split-container {
     flex-direction: column;
   }
