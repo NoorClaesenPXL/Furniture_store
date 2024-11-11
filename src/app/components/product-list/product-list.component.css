@@ -14,7 +14,7 @@
     height: 400px;
     padding: 20px;
     margin: 5px;
-    border: 5px solid rgb(10, 85, 128);
+    border: 5px solid rgb(242, 250, 255);
     border-radius: 8px;
     box-sizing: border-box;
 }
@@ -22,9 +22,13 @@
 .product-card:hover{
     background-image: url(../../../assets/modern-room.jpg);
     background-size: contain;
-    background-repeat: no-repeat;
+    transition: background-image 0.5s ease, background-position 0.5s ease;
     background-size: cover;
 }
+
+.product-card img {
+    transition: transform 0.5s ease;
+  }
 
 .product-card:hover img{
     transform: translateY(170px) translateX(35px) scale(2);
