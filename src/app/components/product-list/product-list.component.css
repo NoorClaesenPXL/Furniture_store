@@ -1,29 +1,32 @@
-.product-image{
+.product-image {
     width: 100px;
     height: 100px;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .product-card{
     float: left;
-    width: 25%;
-    height: 20%;
-    background-color:#7e4a35;
-    color: #fff;
+    width: 30%;
+    height: 500px;
     padding: 20px;
     margin: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 5px solid rgb(10, 85, 128);
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 button{
-    margin: 10px;
-    background-color: orange;
-    border: none;
-    border-radius: 5px;
+    color: black;
+    padding: 10px ;
+    background-color: white;
+    border: 1px solid  rgb(10, 85, 128);
+    font-size: 16px;
+    border-radius: 8px;
 }
 
 button:hover{
-    background-color: rgb(10, 85, 128);
+    background-color:rgb(238, 168, 27);
+    border: white;
 }

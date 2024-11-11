@@ -1,32 +1,94 @@
-h1 {
-    background-color:#7e4a35;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 48px;
-    border: 5px solid rgb(10, 85, 128);
-    border-radius: 8px;
-    text-shadow: 
-        2px 2px 0 #e2b04b,
-        4px 4px 4px rgba(0, 0, 0, 0.2);
+.split-container {
+  display: flex;
+  width: 100%;
 }
 
-body{
-    background-image: url('../assets/groovy-retro.avif');
-    background-color:beige;
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 20px;
 }
 
-.retro-style {
-    background-color: #357a95;
-    color: #e77a27;
-    font-family: 'Courier New', monospace;
+@media (min-width: 769px) {
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    padding: 100px;
+    font-size: large;
   }
-  
-  /* Style for Minimalist theme */
-  .minimalist-style {
-    background-color: #ffffff;
-    color: #000;
-    font-family: Arial, sans-serif;
+}
+
+img{
+  width: 450px;
+}
+
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column;
   }
+  img{
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    }
+}
+
+.minimalist {
+  color: black;
+  font-weight: normal;
+  font-family: 'Lucida Sans';
+  background-image: url(../assets/minimal.avif);
+  border: black;
+}
+
+.minimalist .left-panel {
+  background-color: rgb(238, 168, 27, 0.7);
+}
+
+.minimalist .product-card{
+  border: black;
+}
+
+.retro {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.retro .left-panel{
+  background-color:  rgb(239, 234, 192, 0.5);
+}
+
+.retro .right-panel{
+  background: url('../assets/retro-orange.jpg') no-repeat center center / cover;
+}
+
+.dark-mode {
+  color: white;
+  background-image: url(../assets/dark-mode.avif);
+}
+
+.dark-mode .left-panel {
+  font-style: italic;
+  background-color: black;
+}
+
+.dark-mode select{
+  background-color: black;
+  border: 5px solid black
+}
+
+.classic {
+  background: url('../assets/classic.jpg') no-repeat center center / cover;
+}
+
+.classic .left-panel{
+  background-color: rgb(168, 210, 226);
+
+}
+
+select{
+  background-color:  rgb(10, 85, 128);
+  color: white;
+  border: 5px solid  rgb(10, 85, 128);
+  border-radius: 5px;
+}

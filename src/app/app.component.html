@@ -1,23 +1,28 @@
-<body>
-  <h1>Furniture Store</h1>
-  <app-basket></app-basket>
-  <div>
-    <label for="styleDropdown">Choose a different style:</label>
-    <select id="styleDropdown" (change)="applyStyle($event)">
-      <option value="" disabled selected>Select Style</option>
-      <option *ngFor="let option of styleOptions" [value]="option.value">
-        {{ option.label }}
-      </option>
-    </select>    
-  </div>
+<body  [ngClass]="getStyleClass()">
 
-  <div [style.background-color]="backgroundColor" style="height: 100vh;">
-    <label for="colorDropdown">Choose a background color:</label>
-    <select id="colorDropdown" (change)="changeBackgroundColor($event)">
-      <option value="" disabled selected>Select a color</option>
-      <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
-    </select>
-  </div>
+  <div class="split-container">
 
-  <app-product-list></app-product-list>
+    <div class="left-panel">
+      <img class="logo" src="../assets/logo.jpg">
+      <p>
+        Discover elegant, handcrafted furniture
+        that transforms any space into a home. 
+        From timeless classics to modern designs, 
+        each piece is created with quality, comfort,
+          and style in mind.
+      </p>
+      <app-basket></app-basket>
+      <label for="styleSelector">Choose a style: </label>
+      <select id="styleSelector" [(ngModel)]="selectedStyle">
+        <option *ngFor="let option of styleOptions" [value]="option.value">
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="right-panel">
+       <app-product-list></app-product-list>
+    </div>
+
+  </div>
 </body>
