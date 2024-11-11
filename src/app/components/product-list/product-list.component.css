@@ -27,7 +27,7 @@
 }
 
 .product-card:hover img{
-    transform: translateY(170px) translateX(35px) scale(1.5);
+    transform: translateY(170px) translateX(35px) scale(2);
 }
 
 .product-card:hover p, 
