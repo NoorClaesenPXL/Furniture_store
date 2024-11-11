@@ -4,6 +4,7 @@
 
     <div class="left-panel">
       <div class="logo"></div>
+      <h1>Elegant Designs</h1>
       <p>
         Discover elegant, handcrafted furniture
         that transforms any space into a home. 
@@ -11,7 +12,7 @@
         each piece is created with quality, comfort,
           and style in mind.
       </p>
-      <app-basket></app-basket>
+      <!--<app-basket></app-basket>-->
       <label for="styleSelector">Choose a style: </label>
       <select id="styleSelector" [(ngModel)]="selectedStyle">
         <option *ngFor="let option of styleOptions" [value]="option.value">

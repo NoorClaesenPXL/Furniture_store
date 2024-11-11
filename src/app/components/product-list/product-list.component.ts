@@ -38,7 +38,6 @@ export class ProductListComponent implements OnInit {
 
   addToBasket(product: Product): void {
     this.basketService.addProductToBasket(product);
-
     this.loadCurrentBasket();
   }
 }

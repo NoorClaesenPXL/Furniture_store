@@ -1,8 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 html, body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-width: 680px; 
+    min-height: 480px;
     margin: 0;
     padding: 0;
   }
