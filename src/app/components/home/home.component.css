@@ -1,0 +1,101 @@
+.split-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .left-panel, .right-panel {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .logo{
+    background-image: url('../../../assets/logo-minimalist-furniture_23-2148462014.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+  }
+  
+  select{
+    background-color:  rgb(242, 250, 255);
+    color: black;
+    border: 5px solid  rgb(242, 250, 255);
+    border-radius: 5px;
+  }
+  
+  @media (min-width: 1300px) {
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 450px;
+      padding: 40px;
+      font-size: large;
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    .split-container {
+      flex-direction: column;
+    }
+    .logo{
+      width: 200px;
+      height: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  
+  .minimalist {
+    color: black;
+    font-weight: normal;
+    font-family: 'Lucida Sans';
+    background-image: url(../../../assets/minimal.avif);
+    border: black;
+  }
+  
+  .minimalist .left-panel {
+    background-color: rgb(238, 168, 27, 0.7);
+  }
+  
+  .minimalist .product-card{
+    border: black;
+  }
+  
+  .retro {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .retro .left-panel{
+    background-color:  rgb(239, 234, 192, 0.5);
+  }
+  
+  .retro .right-panel{
+    background: url('../../../assets/retro-orange.jpg') no-repeat center center / cover;
+  }
+  
+  .dark-mode {
+    color: white;
+    background-image: url(../../../assets/dark-mode.avif);
+  }
+  
+  .dark-mode .left-panel {
+    font-style: italic;
+    background-color: black;
+  }
+  
+  .dark-mode select{
+    color: white;
+    background-color: black;
+    border: 5px solid black
+  }
+  
+  .classic {
+    background: url('../../../assets/classic.jpg') no-repeat center center / cover;
+  }
+  
+  .classic .left-panel{
+    background-color: rgb(168, 210, 226);
+
+  }

@@ -1,0 +1,9 @@
+.full-width {
+    width: 90%;
+    margin: 0px 20px 0px 20px;
+  }
+h1{
+    background-color: rgb(238, 168, 27, 0.7);
+    margin: 0px 0px 40px 0px;
+    padding: 20px 0px 20px 0px;
+}

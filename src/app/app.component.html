@@ -1,29 +1,7 @@
-<body  [ngClass]="getStyleClass()">
-
-  <div class="split-container">
-
-    <div class="left-panel">
-      <div class="logo"></div>
-      <h1>Elegant Designs</h1>
-      <p>
-        Discover elegant, handcrafted furniture
-        that transforms any space into a home. 
-        From timeless classics to modern designs, 
-        each piece is created with quality, comfort,
-          and style in mind.
-      </p>
-      <!--<app-basket></app-basket>-->
-      <label for="styleSelector">Choose a style: </label>
-      <select id="styleSelector" [(ngModel)]="selectedStyle">
-        <option *ngFor="let option of styleOptions" [value]="option.value">
-          {{ option.name }}
-        </option>
-      </select>
-    </div>
-
-    <div class="right-panel">
-       <app-product-list></app-product-list>
-    </div>
-
-  </div>
-</body>
+<nav>
+    <a routerLink="">Home</a>
+    <a routerLink="form">Contact</a>
+</nav>
+  
+  <router-outlet></router-outlet>
+  
